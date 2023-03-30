@@ -18,9 +18,11 @@
   "scripts": {
     "test": "jest --config jestconfig.json --passWithNoTests",
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-    "typedoc": "typedoc"
+    "typedoc": "typedoc",
+    "typescript:check": "tsc",
+    "prettier:check": "prettier --check ./src",
+    "prettier:format": "prettier --write \"src/**/*.ts\""
   },
   "peerDependencies": {
     "@haqq/encryption-react-native": "0.0.2",
