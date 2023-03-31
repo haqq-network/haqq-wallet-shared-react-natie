@@ -25,7 +25,11 @@ async function signMetadata(
   return [publicKeyUncompressed, key, signature, timestamp, value];
 }
 
-export async function getMetadataValue(host: string, privateKey: BN | string, key: string) {
+export async function getMetadataValue(
+  host: string,
+  privateKey: BN | string,
+  key: string,
+) {
   const params = await signMetadata(privateKey, key);
 
   const result = await jsonrpcRequest<{
