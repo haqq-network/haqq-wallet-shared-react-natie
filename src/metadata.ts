@@ -4,26 +4,33 @@ import {jsonrpcRequest} from './jsonrpc-request';
 import {decrypt, encrypt} from '@haqq/encryption-react-native';
 import stringify from 'json-stable-stringify';
 import base64 from 'react-native-base64';
+import {stringToUtf8Bytes} from './string-to-utf8-bytes';
 
 async function signMetadata(
   privateKey: BN | string,
   key: string,
   value: string = '',
 ) {
-  const timestamp = +Date.now() / 1000;
+  const timestamp = Math.floor(+Date.now() / 1000);
   const pk = BN.isBN(privateKey) ? privateKey.toString('hex') : privateKey;
 
-  const signature = await sign(
-    pk,
-    stringify({
-      timestamp,
-      value,
-    }),
-  );
+  const message = stringToUtf8Bytes(stringify({
+    timestamp,
+    value,
+  }))
+
+  const hash = Buffer.from(
+    [
+      25, 69, 116, 104, 101, 114, 101, 117, 109, 32, 83, 105, 103, 110, 101,
+      100, 32, 77, 101, 115, 115, 97, 103, 101, 58, 10,
+    ].concat(stringToUtf8Bytes(String(message.length)), message),
+  ).toString('hex')
+
+  const signature = await sign(pk, hash,);
 
   const {publicKeyUncompressed} = await accountInfo(pk);
 
-  return [publicKeyUncompressed, key, signature, timestamp, value];
+  return [publicKeyUncompressed.startsWith('0x') ? publicKeyUncompressed.slice(2) : publicKeyUncompressed, key, signature.startsWith('0x') ? signature.slice(2) : signature, timestamp, value];
 }
 
 export async function getMetadataValue(
