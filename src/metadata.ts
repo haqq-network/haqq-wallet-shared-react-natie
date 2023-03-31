@@ -56,12 +56,15 @@ export async function getMetadataValue(
     value: string;
   }>(host, 'get', params);
 
-  const value = base64.decode(result.value || '');
+  if (!result?.value) {
+    return null
+  }
+  const value = base64.decode(result.value);
 
   const message = await decrypt<{
     value: any;
   }>(pk, value);
-  return message.value;
+  return message?.value ?? null;
 }
 
 export async function setMetadataValue(
