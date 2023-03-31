@@ -57,7 +57,7 @@ export async function getMetadataValue(
   }>(host, 'get', params);
 
   if (!result?.value) {
-    return null
+    return null;
   }
   const value = base64.decode(result.value);
 
