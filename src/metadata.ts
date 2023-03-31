@@ -14,23 +14,33 @@ async function signMetadata(
   const timestamp = Math.floor(+Date.now() / 1000);
   const pk = BN.isBN(privateKey) ? privateKey.toString('hex') : privateKey;
 
-  const message = stringToUtf8Bytes(stringify({
-    timestamp,
-    value,
-  }))
+  const message = stringToUtf8Bytes(
+    stringify({
+      timestamp,
+      value,
+    }),
+  );
 
   const hash = Buffer.from(
     [
       25, 69, 116, 104, 101, 114, 101, 117, 109, 32, 83, 105, 103, 110, 101,
       100, 32, 77, 101, 115, 115, 97, 103, 101, 58, 10,
     ].concat(stringToUtf8Bytes(String(message.length)), message),
-  ).toString('hex')
+  ).toString('hex');
 
-  const signature = await sign(pk, hash,);
+  const signature = await sign(pk, hash);
 
   const {publicKeyUncompressed} = await accountInfo(pk);
 
-  return [publicKeyUncompressed.startsWith('0x') ? publicKeyUncompressed.slice(2) : publicKeyUncompressed, key, signature.startsWith('0x') ? signature.slice(2) : signature, timestamp, value];
+  return [
+    publicKeyUncompressed.startsWith('0x')
+      ? publicKeyUncompressed.slice(2)
+      : publicKeyUncompressed,
+    key,
+    signature.startsWith('0x') ? signature.slice(2) : signature,
+    timestamp,
+    value,
+  ];
 }
 
 export async function getMetadataValue(
