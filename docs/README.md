@@ -1,3 +1,3 @@
-@haqq/shared-react-natie - v0.0.1 / [Exports](modules.md)
+@haqq/shared-react-native - v0.0.2 / [Exports](modules.md)
 
 # Base provider for path

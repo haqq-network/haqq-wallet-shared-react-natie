@@ -1,14 +1,52 @@
-[@haqq/shared-react-natie - v0.0.1](README.md) / Exports
+[@haqq/shared-react-native - v0.0.2](README.md) / Exports
 
-# @haqq/shared-react-natie - v0.0.1
+# @haqq/shared-react-native - v0.0.2
 
 ## Table of contents
+
+### Type Aliases
+
+- [ShareCreateResponse](modules.md#sharecreateresponse)
+- [SharesResponse](modules.md#sharesresponse)
 
 ### Functions
 
 - [getMetadataValue](modules.md#getmetadatavalue)
 - [jsonrpcRequest](modules.md#jsonrpcrequest)
 - [setMetadataValue](modules.md#setmetadatavalue)
+
+## Type Aliases
+
+### ShareCreateResponse
+
+Ƭ **ShareCreateResponse**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `hex_share` | `string` |
+
+#### Defined in
+
+[types.ts:6](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/0b28d8c/src/types.ts#L6)
+
+___
+
+### SharesResponse
+
+Ƭ **SharesResponse**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `isNew` | `boolean` |
+| `shares` | [`string`, `string`][] |
+
+#### Defined in
+
+[types.ts:1](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/0b28d8c/src/types.ts#L1)
 
 ## Functions
 
@@ -30,7 +68,7 @@
 
 #### Defined in
 
-[metadata.ts:28](https://github.com/haqq-network/haqq-wallet-shared-react-natie/blob/807ee50/src/metadata.ts#L28)
+[metadata.ts:46](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/0b28d8c/src/metadata.ts#L46)
 
 ___
 
@@ -58,7 +96,7 @@ ___
 
 #### Defined in
 
-[jsonrpc-request.ts:1](https://github.com/haqq-network/haqq-wallet-shared-react-natie/blob/807ee50/src/jsonrpc-request.ts#L1)
+[jsonrpc-request.ts:1](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/0b28d8c/src/jsonrpc-request.ts#L1)
 
 ___
 
@@ -81,4 +119,4 @@ ___
 
 #### Defined in
 
-[metadata.ts:42](https://github.com/haqq-network/haqq-wallet-shared-react-natie/blob/807ee50/src/metadata.ts#L42)
+[metadata.ts:70](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/0b28d8c/src/metadata.ts#L70)
