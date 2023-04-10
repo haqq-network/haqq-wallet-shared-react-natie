@@ -1,8 +1,12 @@
-export async function jsonrpcRequest<T extends object>(
+import {makeID} from './make-id';
+
+export async function jsonrpcRequest<T>(
   endpoint: string,
   method: string,
   params: any[] = [],
 ): Promise<T> {
+  const id = makeID(5);
+
   const response = await fetch(endpoint, {
     method: 'POST',
     headers: {
@@ -13,7 +17,7 @@ export async function jsonrpcRequest<T extends object>(
     },
     body: JSON.stringify({
       jsonrpc: '2.0',
-      id: 1,
+      id,
       method,
       params,
     }),
@@ -22,5 +26,10 @@ export async function jsonrpcRequest<T extends object>(
   if (json.error) {
     throw new Error(json.error.message);
   }
+
+  if (json.id !== id) {
+    throw new Error('Invalid response id');
+  }
+
   return json.result;
 }
