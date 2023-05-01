@@ -1,7 +1,7 @@
 import BN from 'bn.js';
 import {accountInfo, sign} from '@haqq/provider-web3-utils';
 import {jsonrpcRequest} from './jsonrpc-request';
-import {decrypt, encrypt} from '@haqq/encryption-react-native';
+import {passworder} from '@haqq/encryption-react-native';
 import stringify from 'json-stable-stringify';
 import base64 from 'react-native-base64';
 import {stringToUtf8Bytes} from './string-to-utf8-bytes';
@@ -61,7 +61,7 @@ export async function getMetadataValue(
   }
   const value = base64.decode(result.value);
 
-  const message = await decrypt<{
+  const message = await passworder.decrypt<{
     value: any;
   }>(pk, value);
   return message?.value ?? null;
@@ -73,7 +73,7 @@ export async function setMetadataValue(
   key: string,
   value: any,
 ) {
-  const message = await encrypt(privateKey.toString('hex'), {value});
+  const message = await passworder.encrypt(privateKey.toString('hex'), {value});
   const b64message = base64.encode(message);
   const params = await signMetadata(privateKey, key, b64message);
 
