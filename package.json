@@ -25,7 +25,7 @@
     "prettier:format": "prettier --write \"src/**/*.ts\""
   },
   "peerDependencies": {
-    "@haqq/encryption-react-native": "0.0.2",
+    "@haqq/encryption-react-native": "0.0.3",
     "@haqq/provider-web3-utils": "0.0.10"
   },
   "dependencies": {
@@ -34,7 +34,7 @@
     "react-native-base64": "0.2.1"
   },
   "devDependencies": {
-    "@haqq/encryption-react-native": "0.0.2",
+    "@haqq/encryption-react-native": "0.0.3",
     "@haqq/provider-web3-utils": "0.0.10",
     "@types/bn.js": "^5.1.1",
     "@types/jest": "^29.5.0",
