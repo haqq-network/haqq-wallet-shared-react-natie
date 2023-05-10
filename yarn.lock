@@ -931,15 +931,6 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@haqq/encryption-react-native@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@haqq/encryption-react-native/-/encryption-react-native-0.0.3.tgz#5883d243aedf726f6b3ccb24faa74c9d0a30969c"
-  integrity sha512-o+8vxZ2W+yALGlkdNdhWbhjcZUFeikJfE9BR4XnXjVh3MNWgca6hfgHLy1Zwe09y4ma0vkB2vd3Y7bqpmRMuAA==
-  dependencies:
-    base-64 "^1.0.0"
-    polyfill-crypto.getrandomvalues "^1.0.0"
-    react-native-aes-crypto "2.1.0"
-
 "@haqq/provider-web3-utils@0.0.10":
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/@haqq/provider-web3-utils/-/provider-web3-utils-0.0.10.tgz#e99efdb7a92d1594a6f155082e2b11190de1a75a"
@@ -1523,6 +1514,11 @@
   integrity sha512-1kbcJ40lLB7MHsj39U4Sh1uTd2E7rLEa79kmDpI6cy+XiXsteB3POdQomoq4FxszMrO3ZYchkhYJw7A2862b3w==
   dependencies:
     "@babel/types" "^7.3.0"
+
+"@types/base-64@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@types/base-64/-/base-64-1.0.0.tgz#de9c6070ea457fbd65a1b5ebf13976b3ac0bdad0"
+  integrity sha512-AvCJx/HrfYHmOQRFdVvgKMplXfzTUizmh0tz9GFTpDePWgCY4uoKll84zKlaRoeiYiCr7c9ZnqSTzkl0BUVD6g==
 
 "@types/bn.js@^5.1.1":
   version "5.1.1"
@@ -4815,11 +4811,6 @@ react-native-aes-crypto@2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/react-native-aes-crypto/-/react-native-aes-crypto-2.1.0.tgz#9482fe914cae411f10ec43a53b2439a41b78cbbd"
   integrity sha512-2zvvQXMW2Qeg9B/VDetoB2w/cyVncPuEsoW1iUhZP12jAx+zbxsdf+A7inSf2XKMcRURfpsfUshQTb2beYUVhA==
-
-react-native-base64@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/react-native-base64/-/react-native-base64-0.2.1.tgz#3d0e73a649c4c0129f7b7695d3912456aebae847"
-  integrity sha512-eHgt/MA8y5ZF0aHfZ1aTPcIkDWxza9AaEk4GcpIX+ZYfZ04RcaNahO+527KR7J44/mD3efYfM23O2C1N44ByWA==
 
 react-native-codegen@^0.71.5:
   version "0.71.5"

@@ -2,7 +2,7 @@ import BN from 'bn.js';
 import {accountInfo, sign} from '@haqq/provider-web3-utils';
 import {jsonrpcRequest} from './jsonrpc-request';
 import stringify from 'json-stable-stringify';
-import base64 from 'react-native-base64';
+import base64 from 'base-64';
 import {stringToUtf8Bytes} from './string-to-utf8-bytes';
 import {decryptPassworder, encryptPassworder} from './passworder';
 import {toHexPrivateKey} from './to-hex-private-key';
