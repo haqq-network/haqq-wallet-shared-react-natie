@@ -1,10 +1,11 @@
 import BN from 'bn.js';
 import {accountInfo, sign} from '@haqq/provider-web3-utils';
 import {jsonrpcRequest} from './jsonrpc-request';
-import {passworder} from '@haqq/encryption-react-native';
 import stringify from 'json-stable-stringify';
 import base64 from 'react-native-base64';
 import {stringToUtf8Bytes} from './string-to-utf8-bytes';
+import {decryptPassworder, encryptPassworder} from './passworder';
+import {toHexPrivateKey} from './to-hex-private-key';
 
 async function signMetadata(
   privateKey: BN | string,
@@ -12,7 +13,7 @@ async function signMetadata(
   value: string = '',
 ) {
   const timestamp = Math.floor(+Date.now() / 1000);
-  const pk = BN.isBN(privateKey) ? privateKey.toString('hex') : privateKey;
+  const pk = toHexPrivateKey(privateKey);
 
   const message = stringToUtf8Bytes(
     stringify({
@@ -48,8 +49,8 @@ export async function getMetadataValue(
   privateKey: BN | string,
   key: string,
 ) {
-  const pk = BN.isBN(privateKey) ? privateKey.toString('hex') : privateKey;
-  const params = await signMetadata(privateKey, key);
+  const pk = toHexPrivateKey(privateKey);
+  const params = await signMetadata(pk, key);
 
   const result = await jsonrpcRequest<{
     key: string;
@@ -61,7 +62,7 @@ export async function getMetadataValue(
   }
   const value = base64.decode(result.value);
 
-  const message = await passworder.decrypt<{
+  const message = await decryptPassworder<{
     value: any;
   }>(pk, value);
   return message?.value ?? null;
@@ -73,9 +74,10 @@ export async function setMetadataValue(
   key: string,
   value: any,
 ) {
-  const message = await passworder.encrypt(privateKey.toString('hex'), {value});
+  const pk = toHexPrivateKey(privateKey);
+  const message = await encryptPassworder(pk, {value});
   const b64message = base64.encode(message);
-  const params = await signMetadata(privateKey, key, b64message);
+  const params = await signMetadata(pk, key, b64message);
 
   const result = await jsonrpcRequest<{
     key: string;
