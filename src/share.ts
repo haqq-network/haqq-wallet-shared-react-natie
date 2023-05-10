@@ -4,6 +4,11 @@ import {curveN} from './constants';
 import {hashPasswordToBN} from './hash-password-to-bn';
 import {accountInfo} from '@haqq/provider-web3-utils';
 
+/**
+ * encrypt private key with password
+ * @param share
+ * @param password
+ */
 export async function encryptShare(
   share: Share,
   password: string,
@@ -21,6 +26,11 @@ export async function encryptShare(
   };
 }
 
+/**
+ * decrypt private key with password
+ * @param shareEncrypted
+ * @param password
+ */
 export async function decryptShare(
   shareEncrypted: ShareEncrypted,
   password: string,

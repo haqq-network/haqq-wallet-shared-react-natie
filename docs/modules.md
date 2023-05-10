@@ -1,22 +1,45 @@
-[@haqq/shared-react-native - v0.0.3](README.md) / Exports
+[@haqq/shared-react-native - v0.0.5](README.md) / Exports
 
-# @haqq/shared-react-native - v0.0.3
+# @haqq/shared-react-native - v0.0.5
 
 ## Table of contents
 
 ### Type Aliases
 
+- [Share](modules.md#share)
 - [ShareCreateResponse](modules.md#sharecreateresponse)
+- [ShareEncrypted](modules.md#shareencrypted)
 - [SharesResponse](modules.md#sharesresponse)
 
 ### Functions
 
+- [decryptShare](modules.md#decryptshare)
+- [encryptShare](modules.md#encryptshare)
 - [getMetadataValue](modules.md#getmetadatavalue)
 - [jsonrpcRequest](modules.md#jsonrpcrequest)
 - [makeID](modules.md#makeid)
 - [setMetadataValue](modules.md#setmetadatavalue)
 
 ## Type Aliases
+
+### Share
+
+Ƭ **Share**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `name?` | `string` |
+| `polynomialID` | `string` |
+| `share` | `string` |
+| `shareIndex` | `string` |
+
+#### Defined in
+
+[types.ts:10](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/b396cdc/src/types.ts#L10)
+
+___
 
 ### ShareCreateResponse
 
@@ -30,7 +53,27 @@
 
 #### Defined in
 
-[types.ts:6](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/c1d4630/src/types.ts#L6)
+[types.ts:6](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/b396cdc/src/types.ts#L6)
+
+___
+
+### ShareEncrypted
+
+Ƭ **ShareEncrypted**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `name?` | `string` |
+| `nonce` | `string` |
+| `polynomialID` | `string` |
+| `publicShare` | `string` |
+| `shareIndex` | `string` |
+
+#### Defined in
+
+[types.ts:17](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/b396cdc/src/types.ts#L17)
 
 ___
 
@@ -47,9 +90,55 @@ ___
 
 #### Defined in
 
-[types.ts:1](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/c1d4630/src/types.ts#L1)
+[types.ts:1](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/b396cdc/src/types.ts#L1)
 
 ## Functions
+
+### decryptShare
+
+▸ **decryptShare**(`shareEncrypted`, `password`): `Promise`<[`Share`](modules.md#share)\>
+
+decrypt private key with password
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `shareEncrypted` | [`ShareEncrypted`](modules.md#shareencrypted) |
+| `password` | `string` |
+
+#### Returns
+
+`Promise`<[`Share`](modules.md#share)\>
+
+#### Defined in
+
+[share.ts:34](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/b396cdc/src/share.ts#L34)
+
+___
+
+### encryptShare
+
+▸ **encryptShare**(`share`, `password`): `Promise`<[`ShareEncrypted`](modules.md#shareencrypted)\>
+
+encrypt private key with password
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `share` | [`Share`](modules.md#share) |
+| `password` | `string` |
+
+#### Returns
+
+`Promise`<[`ShareEncrypted`](modules.md#shareencrypted)\>
+
+#### Defined in
+
+[share.ts:12](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/b396cdc/src/share.ts#L12)
+
+___
 
 ### getMetadataValue
 
@@ -69,7 +158,7 @@ ___
 
 #### Defined in
 
-[metadata.ts:46](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/c1d4630/src/metadata.ts#L46)
+[metadata.ts:46](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/b396cdc/src/metadata.ts#L46)
 
 ___
 
@@ -97,7 +186,7 @@ ___
 
 #### Defined in
 
-[jsonrpc-request.ts:3](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/c1d4630/src/jsonrpc-request.ts#L3)
+[jsonrpc-request.ts:3](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/b396cdc/src/jsonrpc-request.ts#L3)
 
 ___
 
@@ -117,7 +206,7 @@ ___
 
 #### Defined in
 
-[make-id.ts:1](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/c1d4630/src/make-id.ts#L1)
+[make-id.ts:1](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/b396cdc/src/make-id.ts#L1)
 
 ___
 
@@ -140,4 +229,4 @@ ___
 
 #### Defined in
 
-[metadata.ts:70](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/c1d4630/src/metadata.ts#L70)
+[metadata.ts:70](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/b396cdc/src/metadata.ts#L70)
