@@ -35,7 +35,8 @@ describe('share', () => {
       );
 
       expect(share).toEqual({
-        share: '059fa608c1eab07826098cd94c3dd07450ca4ba632b98d7285915d0429e96fe3',
+        share:
+          '059fa608c1eab07826098cd94c3dd07450ca4ba632b98d7285915d0429e96fe3',
         shareIndex: '14',
         polynomialID: '',
       });
@@ -44,7 +45,7 @@ describe('share', () => {
         '059fa608c1eab07826098cd94c3dd07450ca4ba632b98d7285915d0429e96fe3',
       );
     });
-  })
+  });
 
   describe('encrypt', () => {
     test('should encrypt share', async () => {
@@ -59,12 +60,13 @@ describe('share', () => {
       );
 
       expect(share).toEqual({
-        nonce: '6a1fc5807253d70a67ce44baafd3ec636c1de45c166381c7cd0737a1d1a81efa',
+        nonce:
+          '6a1fc5807253d70a67ce44baafd3ec636c1de45c166381c7cd0737a1d1a81efa',
         polynomialID: '',
         publicShare:
           '0x03aa8ca1dbf3de930843e9fc49e3d6b41718c2dc53884374e7a94cdbb4838bdf3e',
         shareIndex: '14',
       });
     });
-  })
-})
+  });
+});
