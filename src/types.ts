@@ -21,4 +21,3 @@ export type ShareEncrypted = {
   publicShare: string;
   name?: string;
 };
-
