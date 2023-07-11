@@ -6,3 +6,5 @@ export * from './share';
 export {curveN} from './constants';
 export {hashPasswordToBN} from './hash-password-to-bn';
 export {toHexPrivateKey} from './to-hex-private-key';
+export {stringToUtf8Bytes} from './string-to-utf8-bytes';
+export {decryptPassworder, encryptPassworder} from './passworder';
