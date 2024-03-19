@@ -22,7 +22,16 @@ export async function jsonrpcRequest<T>(
       params,
     }),
   });
-  const json = await response.json();
+
+  const text = await response.text();
+  let json = {} as any;
+
+  try {
+    json = JSON.parse(text);
+  } catch (err) {
+    throw new Error(text);
+  }
+
   if (json.error) {
     throw new Error(json.error.message);
   }
