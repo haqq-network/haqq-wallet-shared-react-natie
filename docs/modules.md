@@ -1,11 +1,16 @@
-[@haqq/shared-react-native - v0.0.9](README.md) / Exports
+[@haqq/shared-react-native - v0.0.12](README.md) / Exports
 
-# @haqq/shared-react-native - v0.0.9
+# @haqq/shared-react-native - v0.0.12
 
 ## Table of contents
 
+### Classes
+
+- [JSONRPCError](classes/JSONRPCError.md)
+
 ### Type Aliases
 
+- [JSONRPCErrorMetadata](modules.md#jsonrpcerrormetadata)
 - [Share](modules.md#share)
 - [ShareCreateResponse](modules.md#sharecreateresponse)
 - [ShareEncrypted](modules.md#shareencrypted)
@@ -31,6 +36,29 @@
 
 ## Type Aliases
 
+### JSONRPCErrorMetadata
+
+Ƭ **JSONRPCErrorMetadata**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `headers?` | `Headers` |
+| `rawBody?` | `string` |
+| `request?` | { `endpoint`: `string` ; `method`: `string` ; `params`: `any`[]  } |
+| `request.endpoint` | `string` |
+| `request.method` | `string` |
+| `request.params` | `any`[] |
+| `status?` | `number` |
+| `statusText?` | `string` |
+
+#### Defined in
+
+[src/jsonrpc-request.ts:3](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/jsonrpc-request.ts#L3)
+
+___
+
 ### Share
 
 Ƭ **Share**: `Object`
@@ -46,7 +74,7 @@
 
 #### Defined in
 
-[types.ts:10](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/types.ts#L10)
+[src/types.ts:10](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/types.ts#L10)
 
 ___
 
@@ -62,7 +90,7 @@ ___
 
 #### Defined in
 
-[types.ts:6](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/types.ts#L6)
+[src/types.ts:6](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/types.ts#L6)
 
 ___
 
@@ -82,7 +110,7 @@ ___
 
 #### Defined in
 
-[types.ts:17](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/types.ts#L17)
+[src/types.ts:17](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/types.ts#L17)
 
 ___
 
@@ -99,7 +127,7 @@ ___
 
 #### Defined in
 
-[types.ts:1](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/types.ts#L1)
+[src/types.ts:1](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/types.ts#L1)
 
 ## Variables
 
@@ -109,7 +137,7 @@ ___
 
 #### Defined in
 
-[constants.ts:3](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/constants.ts#L3)
+[src/constants.ts:3](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/constants.ts#L3)
 
 ## Functions
 
@@ -141,7 +169,7 @@ using a password (and AES decryption with native libraries)
 
 #### Defined in
 
-[passworder.ts:67](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/passworder.ts#L67)
+[src/passworder.ts:67](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/passworder.ts#L67)
 
 ___
 
@@ -164,7 +192,7 @@ decrypt private key with password
 
 #### Defined in
 
-[share.ts:34](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/share.ts#L34)
+[src/share.ts:34](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/share.ts#L34)
 
 ___
 
@@ -195,7 +223,7 @@ Encrypts a JS object using a password (and AES encryption with native libraries)
 
 #### Defined in
 
-[passworder.ts:48](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/passworder.ts#L48)
+[src/passworder.ts:48](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/passworder.ts#L48)
 
 ___
 
@@ -218,7 +246,7 @@ encrypt private key with password
 
 #### Defined in
 
-[share.ts:12](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/share.ts#L12)
+[src/share.ts:12](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/share.ts#L12)
 
 ___
 
@@ -240,7 +268,7 @@ ___
 
 #### Defined in
 
-[metadata.ts:47](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/metadata.ts#L47)
+[src/metadata.ts:47](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/metadata.ts#L47)
 
 ___
 
@@ -260,13 +288,13 @@ ___
 
 #### Defined in
 
-[hash-password-to-bn.ts:4](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/hash-password-to-bn.ts#L4)
+[src/hash-password-to-bn.ts:4](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/hash-password-to-bn.ts#L4)
 
 ___
 
 ### jsonrpcRequest
 
-▸ **jsonrpcRequest**<`T`\>(`endpoint`, `method`, `params?`): `Promise`<`T`\>
+▸ **jsonrpcRequest**<`T`\>(`endpoint`, `method`, `params?`, `abortSignal?`): `Promise`<`T`\>
 
 #### Type parameters
 
@@ -281,6 +309,7 @@ ___
 | `endpoint` | `string` | `undefined` |
 | `method` | `string` | `undefined` |
 | `params` | `any`[] | `[]` |
+| `abortSignal?` | `AbortSignal` | `undefined` |
 
 #### Returns
 
@@ -288,7 +317,7 @@ ___
 
 #### Defined in
 
-[jsonrpc-request.ts:3](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/jsonrpc-request.ts#L3)
+[src/jsonrpc-request.ts:23](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/jsonrpc-request.ts#L23)
 
 ___
 
@@ -308,7 +337,7 @@ ___
 
 #### Defined in
 
-[make-id.ts:1](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/make-id.ts#L1)
+[src/make-id.ts:1](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/make-id.ts#L1)
 
 ___
 
@@ -331,7 +360,7 @@ ___
 
 #### Defined in
 
-[metadata.ts:71](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/metadata.ts#L71)
+[src/metadata.ts:71](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/metadata.ts#L71)
 
 ___
 
@@ -355,7 +384,7 @@ Byte array like for input string
 
 #### Defined in
 
-[string-to-utf8-bytes.ts:8](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/string-to-utf8-bytes.ts#L8)
+[src/string-to-utf8-bytes.ts:8](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/string-to-utf8-bytes.ts#L8)
 
 ___
 
@@ -375,4 +404,4 @@ ___
 
 #### Defined in
 
-[to-hex-private-key.ts:3](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/6c89e3c/src/to-hex-private-key.ts#L3)
+[src/to-hex-private-key.ts:3](https://github.com/haqq-network/haqq-wallet-shared-react-native/blob/42b93a3/src/to-hex-private-key.ts#L3)
