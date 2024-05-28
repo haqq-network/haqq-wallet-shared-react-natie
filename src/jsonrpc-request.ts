@@ -24,6 +24,7 @@ export async function jsonrpcRequest<T>(
   endpoint: string,
   method: string,
   params: any[] = [],
+  abortSignal?: AbortSignal,
 ): Promise<T> {
   const id = makeID(5);
 
@@ -41,6 +42,7 @@ export async function jsonrpcRequest<T>(
       method,
       params,
     }),
+    signal: abortSignal,
   });
 
   const text = await response.text();
